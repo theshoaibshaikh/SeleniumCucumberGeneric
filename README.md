@@ -45,7 +45,6 @@ SeleniumCucumberGeneric/
 │       │   ├── utils/            # DriverFactory, TestDataLoader, etc.
 │       └── resources/
 │           ├── features/         # .feature files
-│           └── testdata/         # JSON test data
 ├── testng.xml                    # TestNG suite for parallel execution
 ├── pom.xml                       # Maven dependencies
 ```
