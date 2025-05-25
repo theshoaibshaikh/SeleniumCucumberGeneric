@@ -11,5 +11,5 @@ public class RSA_Login {
 	public WebElement RSA_Login_Password;
 
 	@FindBy(id = "login")
-	public WebElement Login;
+	public WebElement RSA_Login_Login;
 }

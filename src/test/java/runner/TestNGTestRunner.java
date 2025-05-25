@@ -1,4 +1,4 @@
-package testrunner;
+package runner;
 
 import org.testng.annotations.DataProvider;
 
@@ -6,7 +6,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(features = "src/test/resources/Features", glue = { "stepDefinitions",
-		"hooks" }, monochrome = true, tags = "@login or @login2", plugin = { "html:target/cucumber.html" })
+		"hooks" }, monochrome = true, tags = "@login2", plugin = { "pretty", "html:target/cucumber-html-report" })
 public class TestNGTestRunner extends AbstractTestNGCucumberTests {
 	@Override
 	@DataProvider(parallel = true)

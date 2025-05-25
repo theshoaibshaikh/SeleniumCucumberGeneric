@@ -7,8 +7,8 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import hooks.Hooks;
 import io.cucumber.java.en.When;
+import utils.DriverFactory;
 import utils.ElementFetcher;
 import utils.TestDataLoader;
 
@@ -20,7 +20,7 @@ public class AutomationGeneral {
 	ElementFetcher fetcher;
 
 	public AutomationGeneral() {
-		this.driver = Hooks.getDriver();
+		this.driver = DriverFactory.getDriver();
 		this.fetcher = new ElementFetcher(driver);
 		this.prop = new Properties();
 	}
