@@ -1,6 +1,5 @@
 package stepDefinitions;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -11,6 +10,7 @@ import io.cucumber.java.en.When;
 import utils.DriverFactory;
 import utils.ElementFetcher;
 import utils.TestDataLoader;
+import utils.Utils;
 
 public class AutomationGeneral {
 
@@ -31,23 +31,17 @@ public class AutomationGeneral {
 
 	@When("the user launches the application {string}")
 	public void launchApp(String URL) {
-		try (FileInputStream fis = new FileInputStream(
-				System.getProperty("user.dir") + "/src/test/resources/GlobalData.properties")) {
-
-			prop.load(fis);
-			appURL = prop.getProperty(URL);
-
-			if (appURL == null) {
-				throw new RuntimeException("URL key '" + URL + "' not found in GlobalData.properties.");
-			}
-
-			driver.get(appURL);
-
+		String appURL = "";
+		try {
+			appURL = Utils.getGlobalValue(URL);
 		} catch (IOException e) {
 			System.err.println("Failed to load application URL from properties file.");
 			e.printStackTrace();
 			throw new RuntimeException("Error loading application URL for: " + URL, e);
 		}
+
+		driver.get(appURL);
+
 	}
 
 	@When("^the user enters the \"(.+?)\" into the \"(.+?)\" textbox at the \"(.+?)\" page$")
