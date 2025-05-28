@@ -1,0 +1,9 @@
+<extentreports>
+    <configuration>
+        <reportName>Automation Report</reportName>
+        <documentTitle>Automation Execution</documentTitle>
+        <theme>dark</theme> <!-- or standard -->
+        <encoding>utf-8</encoding>
+        <timelineEnabled>true</timelineEnabled>
+    </configuration>
+</extentreports>

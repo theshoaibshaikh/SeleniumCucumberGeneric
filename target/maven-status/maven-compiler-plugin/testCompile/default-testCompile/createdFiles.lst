@@ -1,6 +1,0 @@
-utils/ElementFetcher.class
-runner/TestNGTestRunner.class
-utils/TestDataLoader.class
-hooks/Hooks.class
-utils/DriverFactory.class
-stepDefinitions/AutomationGeneral.class
